@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Flights     <a href="{{ url_for('new_flight') }}">new</a></h1>
+<ol>
+    {% for flight in flights.find() %}
+    <li>
+        <strong>Number: </strong>{{ flight.number }} <br>
+        <strong>Company: </strong>{{ flight.company }} <br>
+        <strong>Desteny: </strong>{{ flight.desteny }} <br>
+        <strong>Hour: </strong>{{ flight.hour }} {{ flight.minutes }} <br>
+    </li> <br>
+    {% endfor %}
+</ol>
+
+{% endblock %}
